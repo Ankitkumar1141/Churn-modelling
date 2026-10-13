@@ -1,1 +1,3 @@
 churn_venv/
+.env/
+.env
