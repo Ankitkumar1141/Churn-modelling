@@ -6,3 +6,40 @@ Data_Preprocessing:
   target: churned
   n_neighbors: 5
   random_state: 42
+
+Train:
+  Random_Forest:
+    n_estimators: 300
+    max_depth: 12
+    min_samples_split: 5
+    min_samples_leaf: 2
+    max_features: sqrt
+    max_samples: 0.85
+    random_state: 42
+    n_jobs: -1
+
+  LightGBM:
+    n_estimators: 250
+    max_depth: 6
+    learning_rate: 0.03
+    num_leaves: 31
+    subsample: 0.8
+    colsample_bytree: 0.8
+    min_child_samples: 20
+    random_state: 42
+    n_jobs: -1
+    verbosity: -1
+
+  XGBoost:
+    n_estimators: 271
+    max_depth: 8
+    learning_rate: 0.0253
+    subsample: 0.8117
+    colsample_bytree: 0.5525
+    min_child_weight: 3
+    gamma: 4.8089
+    reg_alpha: 0.0068
+    random_state: 42
+    n_jobs: -1
+    verbosity: 0
+    eval_metric: logloss
