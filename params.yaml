@@ -2,4 +2,7 @@ Data_Preparation:
   test_size: 0.25
   random_state: 42
 
-  
+Data_Preprocessing:
+  target: churned
+  n_neighbors: 5
+  random_state: 42
