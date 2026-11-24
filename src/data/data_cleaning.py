@@ -136,10 +136,6 @@ if __name__ == "__main__":
     df = load_data(csv_data_path)
     logger.info("Data read successfully")
 
-    df = load_data(csv_data_path)
-    print(df.isna().sum())
-
-
     # clean the data and save
     perform_data_cleaning(data=df, saved_data_path=cleaned_data_save_path)
     logger.info("Data cleaned and saved")
