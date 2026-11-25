@@ -184,13 +184,12 @@ if __name__ == "__main__":
         model_signature = mlflow.models.infer_signature(model_input=sample_input,
                                     model_output=model.predict(sample_input))
 
-        # log the final model and register it under MODEL_NAME
+        # log the final model (registration is done in register_model.py)
         # cloudpickle is used because the default skops format rejects xgboost/lightgbm types
         model_info = mlflow.sklearn.log_model(model,
                                               name="churn_model",
                                               signature=model_signature,
-                                              serialization_format="cloudpickle",
-                                              registered_model_name=MODEL_NAME)
+                                              serialization_format="cloudpickle")
 
         # log the preprocessor
         mlflow.log_artifact(preprocessor_path)
